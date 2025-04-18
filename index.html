@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Protected Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      display: none;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Password</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Submit</button>
+    <div class="error" id="errorMsg"></div>
+    <div class="message" id="message">Hey there, how are you doing?</div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const message = document.getElementById('message');
+      const error = document.getElementById('errorMsg');
+
+      if (input === "1182") {
+        message.style.display = "block";
+        error.textContent = "";
+      } else {
+        message.style.display = "none";
+        error.textContent = "Incorrect password. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>
+Add password-protected page
